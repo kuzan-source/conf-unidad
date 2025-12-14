@@ -57,7 +57,7 @@
     "sway/workspaces": {
     	"format": "{icon}",
     	"sort-by-number": true
-    }
+    },
 
     //  APAFADO AUTOMATICO  //
     "idle_inhibitor": {
