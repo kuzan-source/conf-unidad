@@ -1,10 +1,12 @@
 #_____________________________________Entorno______________________________
 
-set $session sway
+include /etc/sway/config.d/*
+
+#set $session sway
 
 # Exportar variables al entorno del usuario y systemd de forma correcta
-exec env XDG_CURRENT_DESKTOP=sway dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP
-exec env XDG_CURRENT_DESKTOP=sway systemctl --user import-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP
+#exec env XDG_CURRENT_DESKTOP=sway dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP
+#exec env XDG_CURRENT_DESKTOP=sway systemctl --user import-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP
 
 #_____________________________________Variables____________________________
 #
@@ -35,11 +37,13 @@ set $files nemo
 #include /etc/sway/config-vars.d/*
 ############# Personalizacion
 
+#__________________________________ Personalizacion __________________________
+
 default_border pixel
 gaps inner 5
 gaps inner 5
 
-#__________________________________ Output configuration
+#__________________________________ Output configuration ______________________
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # This is commented in Debian, because the Sway wallpaper files are in a separate
@@ -219,5 +223,4 @@ bindsym $mod+u mode "resize"
 # Status Bar:
 #
 
-#include /etc/sway/config.d/*
 

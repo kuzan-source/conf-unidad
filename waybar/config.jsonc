@@ -3,7 +3,6 @@
     "layer": "bottom", // Poner la barra detras o encima de las ventasan
     "position": "top", // Posicion de la barra (top|bottom|left|right)
     "spacing": 3, // Espacio entre mudulos
-    "reload_style_on_change" : true,
 	
     /***	POSICION M	***/
     "modules-left": [
@@ -12,7 +11,7 @@
         "keyboard-state",
         "sway/language",
  	"tray",
-    	"sway/mode"
+        "sway/mode"
     ],
     "modules-center": [
         "sway/workspaces"
@@ -29,37 +28,31 @@
     /***	MODULOS		***/
     //	Usuario	//
     "user": {
-        "format": "{}",
+        "format": "",
 	"open-on-click": false,
         "icon": true
     },
     //	RELOJ	//
     "clock": {
-        // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "{:%H:%M}",
+        "format-alt": "{:%d/%m/%Y}",
+        "tooltip": true,
+        "tooltip-format": "{:%A %d de %B}"
     },
     //	ICONOS APLICACIONES  //
     "tray": {
-        // "icon-size": 21,
         "spacing": 10
-        // "icons": {
-        //   "blueman": "bluetooth",
-        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-        // }
     },
     //	MODOS DE SWAY  //
     "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+        "format": "{}"
     },
-
     //  WORDSPACES  //
     "sway/workspaces": {
     	"format": "{icon}",
     	"sort-by-number": true
     },
-
-    //  APAFADO AUTOMATICO  //
+    //  APAGADO AUTOMATICO  //
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -67,7 +60,6 @@
             "deactivated": ""
         }
     },
-
     //  AUDIO Y MICROFONO  //
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -84,14 +76,12 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", "\ue638"]
+            "default": ["\ueee8","\uf026", "\uf027", "\uf028"]
         },
         "on-click": "pavucontrol"
     },
-
     //  INTERNET  //
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
@@ -99,7 +89,6 @@
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
-
     //  BLUETOOTH  //
     "bluetooth": {
 	"format": " {status}",
@@ -109,17 +98,16 @@
 	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
 	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
     },
-
     //  MODOS DE ENERGIA  //
     "power-profiles-daemon": {
   	"format": "{icon}",
   	"tooltip-format": "Power profile: {profile}\nDriver: {driver}",
   	"tooltip": true,
   	"format-icons": {
-    		"default": "",
-    		"performance": "",
-    		"balanced": "",
-    		"power-saver": ""
+    		"default": "\udb85\udc0b",
+    		"performance": "\udb85\udc0b",
+    		"balanced": "\uf24e",
+    		"power-saver": "\udb80\udf2a"
   	},
   	"interval": 5
     },
@@ -133,10 +121,9 @@
             "unlocked": ""
         }
     },
-    
     //  ACCIONES APAGAR, REINICIAR, ETC  //
     "custom/power": {
-        "format" : "⏻ ",
+        "format" : "\u23fb",
 	"tooltip": false,
 	"menu-actions": {
 		"shutdown": "shutdown",
@@ -156,9 +143,7 @@
         "format": "{}% "
     },
     "temperature": {
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", ""]
     }    
