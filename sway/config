@@ -2,11 +2,13 @@
 
 include /etc/sway/config.d/*
 
+exec /usr/bin/lxqt-policykit-agent
+
 #set $session sway
 
 # Exportar variables al entorno del usuario y systemd de forma correcta
-#exec env XDG_CURRENT_DESKTOP=sway dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP
-#exec env XDG_CURRENT_DESKTOP=sway systemctl --user import-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP
+exec env XDG_CURRENT_DESKTOP=sway dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP
+exec env XDG_CURRENT_DESKTOP=sway systemctl --user import-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP
 
 #_____________________________________Variables____________________________
 #
@@ -50,7 +52,7 @@ gaps inner 5
 # package `sway-backgrounds`. Installing this package drops a config file to
 # /etc/sway/config.d/
 
-	output * bg /home/kuzan/Pictures/wallpaper/stown.gif fill
+	output * bg ~/Pictures/wallpapers/esaka0.png fill
 
 #
 # Example configuration:
@@ -93,7 +95,7 @@ gaps inner 5
     bindsym $mod+Shift+l kill
 
     # Start your launcher
-    bindsym $mod+g exec $menu --show drun
+    bindsym $mod+g exec $menu --show drun --allow-images
 
     #Iniciar navegador
     bindsym $mod+c exec $browser
