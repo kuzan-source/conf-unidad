@@ -1,0 +1,12 @@
+window {
+    font-family: sans;
+}
+
+#entry {
+    padding: 6px;
+}
+
+#entry image {
+    margin-right: 8px;
+}
+
