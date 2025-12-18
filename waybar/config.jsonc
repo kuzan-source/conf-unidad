@@ -8,8 +8,10 @@
     "modules-left": [
 	"user",
 	"clock",
-        "keyboard-state",
         "sway/language",
+        "cpu",
+        "memory",
+        "temperature",
  	"tray",
         "sway/mode"
     ],
@@ -96,7 +98,9 @@
 	"format-connected": " {num_connections} connected",
 	"tooltip-format": "{controller_alias}\t{controller_address}",
 	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "on-click": "~/.config/waybar/scripts/bt-toggle.sh"
+
     },
     //  MODOS DE ENERGIA  //
     "power-profiles-daemon": {
@@ -136,16 +140,17 @@
 
     /***	NO USADOS	***/
     "cpu": {
-        "format": "{usage}% ",
+        "format": "{usage}% \uf4bc",
         "tooltip": false
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}% \uefc5"
     },
     "temperature": {
+        "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
         "critical-threshold": 80,
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format-icons": ["\uf2cb", "", "\uf2c7"]
     }    
 
 }
