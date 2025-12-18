@@ -50,14 +50,16 @@ button:hover {
     background-color: #eb4d4b;
 }
 
-#workspaces {
+#workspaces, #window {
     margin: 0 3px;
 }
 
 /*MODULOS*/
 #user,
 #clock,
-#keyboard-state,
+#cpu,
+#memory,
+#temperature,
 #language,
 #tray,
 #mode,
@@ -69,8 +71,8 @@ button:hover {
 #power-profiles-daemon,
 #custom-power
 {
-   padding: 1px 3px;
-   margin: 1px 3px;
+   padding: 2px 4px;
+   margin: 2px 4px;
 }
 
 /*ESPECIAL MODELO IZQUIERDA Y DERECHA*/
