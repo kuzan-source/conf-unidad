@@ -144,7 +144,7 @@
         "tooltip": false
     },
     "memory": {
-        "format": "{}% \uefc5"
+        "format": "{}% \ue64d"
     },
     "temperature": {
         "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
